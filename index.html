@@ -7,25 +7,47 @@
 <body>
 
 <div class="phone">
-  <div class="bg"></div>
 
-  <div class="top-card glass">
-    <h1>Rio de Janeiro</h1>
-    <p>cidade maravilhosa</p>
+  <!-- HOME SCREEN -->
+  <div id="home" class="screen active">
+    <div class="bg"></div>
+
+    <div class="center-title">rio de janeiro</div>
+
+    <div class="dock glass">
+      <button onclick="openApp('travel')">✈️</button>
+      <button onclick="openApp('camera')">📷</button>
+      <button onclick="openApp('eco')">🍃</button>
+    </div>
   </div>
 
-  <div class="weather glass">
-    <h2>28°C ☀️</h2>
-    <p>Humidity: 65%</p>
+  <!-- TRAVEL APP -->
+  <div id="travel" class="screen">
+    <div class="plane">
+      <div class="window" id="planeWindow">
+        <p>Closed Window</p>
+      </div>
+      <button onclick="openWindow()">Open Window</button>
+    </div>
+    <button class="back" onclick="goHome()">⬅</button>
   </div>
 
-  <div class="center-title">rio de janeiro</div>
-
-  <div class="dock glass">
-    <button onclick="openApp('travel')">✈️</button>
-    <button onclick="openApp('camera')">📷</button>
-    <button onclick="openApp('eco')">🍃</button>
+  <!-- ECO APP -->
+  <div id="eco" class="screen">
+    <video autoplay loop muted class="full-video">
+      <source src="assets/waterfall.mp4" type="video/mp4">
+    </video>
+    <button class="back" onclick="goHome()">⬅</button>
   </div>
+
+  <!-- CAMERA APP -->
+  <div id="camera" class="screen">
+    <video id="cam" autoplay></video>
+    <canvas id="photo"></canvas>
+    <button onclick="takePhoto()">📸</button>
+    <button class="back" onclick="goHome()">⬅</button>
+  </div>
+
 </div>
 
 <script src="script.js"></script>
